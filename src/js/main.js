@@ -1,1 +1,1 @@
-console.log('Hello');
+const canvas = document.getElementById('GameCanvas');
