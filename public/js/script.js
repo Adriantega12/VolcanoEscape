@@ -1,0 +1,8 @@
+class GameManager {
+
+}
+
+
+class Player {
+
+}
