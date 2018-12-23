@@ -7,7 +7,7 @@ class GameManager {
   }
 
   setup() {
-
+    this.player = new Player();
   }
 
   update() {
@@ -17,6 +17,8 @@ class GameManager {
   render() {
     // Render background
     Graphics.drawRect(0, 0, canvas.width, canvas.height, 'black');
+
+    this.player.render();
   }
 
   mainLoop() {

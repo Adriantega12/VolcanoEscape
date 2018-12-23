@@ -5,5 +5,5 @@ window.onload = () => {
   const FPS = 60;
 
   gm.setup();
-  setInterval(gm.mainLoop, 1000/FPS);
+  setInterval(gm.mainLoop, 1000 / FPS);
 }
