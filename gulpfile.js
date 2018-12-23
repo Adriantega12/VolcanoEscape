@@ -1,12 +1,15 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 
-gulp.task('concat', function() {
+function js() {
   return gulp.src('./src/js/*.js')
     .pipe(concat('script.js'))
     .pipe(gulp.dest('./public/js/'));
-});
+}
 
-gulp.task('default', () => {
-  console.log('Hey');
-});
+exports.default = gulp.series(
+  js,
+  () => {
+    gulp.watch('./src/js/*.js', js);
+  },
+);
