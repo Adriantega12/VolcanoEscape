@@ -15,7 +15,8 @@ class GameManager {
   }
 
   render() {
-
+    // Render background
+    Graphics.drawRect(0, 0, canvas.width, canvas.height, 'black');
   }
 
   mainLoop() {
