@@ -36,6 +36,7 @@ window.onload = () => {
   setInterval(gm.mainLoop, 1000/FPS);
 }
 
+
 class Player {
 
 }
