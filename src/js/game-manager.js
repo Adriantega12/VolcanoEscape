@@ -1,5 +1,7 @@
 class GameManager {
   constructor() {
+    this.inputQueue = [];
+
     this.setup = this.setup.bind(this);
     this.update = this.update.bind(this);
     this.render = this.render.bind(this);
@@ -10,8 +12,14 @@ class GameManager {
     this.player = new Player();
   }
 
-  update() {
+  handleInput() {
+    while (this.inputQueue.length > 0) {
+      this.player.handleInput(this.inputQueue.shift());
+    }
+  }
 
+  update() {
+    this.player.update();
   }
 
   render() {
@@ -22,6 +30,9 @@ class GameManager {
   }
 
   mainLoop() {
+    if (this.inputQueue.length > 0) {
+      this.handleInput();
+    }
     this.update();
     this.render();
   }
